@@ -1,0 +1,97 @@
+Week 2 of "An Introduction to Interactive Programming in Python"
+
+Quesition 1
+What typically calls an event handler?
+
+
+- Some code that you didn't write which generates the event.
+
+Question 2
+In CodeSkulptor, how many event handlers can be running at the same time?
+- 1
+
+Question 3
+What are the three parts of a frame?
+Refer to the video on SimpleGUI.
+- Canvas
+- Status Area
+- Control Area
+
+Question 4
+For the SimpleGUI-based programs in this course, we recommended breaking down an interactive Python program into seven parts.  Below, these parts are listed alphabetically.
+
+1 Create frame
+2 Define classes
+3 Define event handlers
+4 Initialize global variables
+5 Define helper functions
+6 Register event handlers
+7 Start frame and timers
+However, in lecture, we recommended a particular ordering of these parts.
+- 4 5 2 3 1 6 7
+
+Question 5
+Assume the following global definition is part of your program.
+x = 5
+
+If each of the following function definitions are also part of your program, which of them needs a global x declaration? 
+-
+def a(y):
+    x = x + y
+    return y
+
+Question 6
+Consider the following code.
+
+count = 0
+
+def square(x):
+    global count
+    count += 1
+    return x**2
+
+print square(square(square(square(3))))
+
+What is the value of count at the end?  Enter a number. 
+- 4
+
+Question 7
+Consider the following code. 
+
+a = 3
+b = 6
+
+def f(a):
+    c = a + b
+    return c
+    
+- f
+- a
+- b
+
+Question 8
+Consider the following code.
+
+a = 3
+b = 6
+
+def f(a):
+    c = a + b
+    return c
+    
+- a
+- c
+
+Question 9
+Which of the following are valid calls to create_frame?
+- f = simplegui.create_frame("My Frame", 100, 100)
+- frame = simplegui.create_frame("Testing", 200, 200, 300)
+
+Question 10
+If the following is our entire program, what one line of code should replace the question marks for it to show a frame? 
+
+???
+f = simplegui.create_frame("My frame", 200, 200)
+f.start()
+
+- import simplegui
