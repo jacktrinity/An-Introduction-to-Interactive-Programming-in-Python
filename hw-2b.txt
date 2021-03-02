@@ -1,2 +1,113 @@
 Week 2 of "An Introduction to Interactive Programming in Python"
 
+Question 1
+In the following code, what does the number 100 represent?
+
+my_button = frame.add_button("My Label", button_handler, 100)
+- Width of the button in pixels
+
+Question 2
+How many control objects are allowed in a frame?
+- Unlimited, i.e., 0 or more
+
+Question 3
+Which of the following are valid ways of defining and using a label?
+Note that ellipses denote code that is omitted from and irrelevant for the question.  Feel free to fill in plausible parameters and test each choice in CodeSkulptor.
+-
+import simplegui
+
+f = simplegui.create_frame(...)
+label = f.add_label("My label")
+label.set_text("My new label")
+
+-
+import simplegui
+
+frame = simplegui.create_frame(...)
+frame.add_label("Label one")
+frame.add_label("Label two")
+
+Question 4
+When you enter text into an input field and press enter, the text is passed to the input field's event handler. What is the data type of the text?
+- A string 
+The entered data is a string. The text entered into an input field is always passed to the input handler as a string even if the text corresponds to a number.
+
+Question 5
+Consider the following conditional statement.
+
+if p == False:
+    return False
+elif q == False:
+    return False
+else:
+    return True
+
+That is equivalent to which of the following simpler statements?
+- return q and p
+
+Question 6
+Which of the following describes the mistake in the following code?
+
+def volume_cube(side):
+    """ Returns the volume of a cube, given the length of its side. """
+    print side ** 3
+    
+s = 5
+print "The volume of a cube with sides", s, "long is", volume_cube(s), "."
+
+- The function should return, not print, its result.
+In most cases, functions should return their computed results. Furthermore, the documentation string here specifies that it should be returning that value.
+
+Question 7
+What kind of errors can happen if you are missing a needed global declaration in one of your function definitions? For this question, you need only consider the case where the problem is in the function that is missing the global declaration.
+
+- Error: local variable '...' referenced before assignment
+- An incorrect computation that generates no error message
+If you only assign to the variable, without trying to use its current value, you won't get any error message.  Instead, Python assumes the variable is local, which might lead to an unexpected result.
+
+Question 8
+Which of the following function definitions are in the recommended code style?
+-
+def my_function(x, y):
+    """ Add the two inputs. """
+    return x + y
+    
+Question 9
+# Simple interactive application
+
+import simplegui
+
+# Define globals.
+
+message = "Welcome!"
+count = 0
+
+# Define event handlers.
+
+def button_handler():
+    """Count number of button presses."""
+    global count
+    count += 1
+    print message," You have clicked", count, "times."
+
+def input_handler(text):
+    """Get text to be displayed."""
+    global message
+    message = text
+
+# Create frame and register event handlers.
+
+frame = simplegui.create_frame("Home", 100, 200)
+frame.add_button("Click me", button_handler)
+frame.add_input("New message:", input_handler, 100)
+
+# Start frame.
+
+frame.start()
+
+We'd like to modify the code so that the count is reset to zero whenever a new message is entered.  Where would you need to modify this code to implement this change?
+- Add an assignment to count in the event handler for the input field. Also a global count declaration there.
+
+Question 10
+In the game “Guess the number”, what is the minimum number of guesses necessary to guarantee that the guesser can always win if the secret number is chosen in range(0, 400)?
+- 9 guesses
