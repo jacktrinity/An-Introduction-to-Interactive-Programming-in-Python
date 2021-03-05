@@ -1,3 +1,5 @@
+Week 3 of "An Introduction to Interactive Programming in Python"
+
 Question 1
 When the following code is executed, how many times is timer_handler called?
 
