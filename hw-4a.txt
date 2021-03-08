@@ -24,4 +24,37 @@ i.e., what non negative numbers should we put in my_list[??? : ???] to the resul
 Submit two numbers, one for each of these two questions, separated by spaces.
 - 1 3
 
-Queestion 4
+Question 4
+If we want to split a list my_list into two halves, which of the following uses slices to do so correctly?
+
+More precisely, if the length of my_list is 2n, i.e., even, then the two parts should each have length n. 
+If its length is 2n+1, i.e., odd, then the two parts should have lengths n and n+1.
+- my_list[0 : len(my_list) // 2] and my_list[len(my_list) // 2 : len(my_list)]
+- my_list[0 : len(my_list) // 2] and my_list[len(my_list) // 2 :]
+
+Question 5
+What is the distance between point [4, 7] and the nearest point on the circle centered at [2, 9] with radius 2? 
+Provide at least 4 digits of accuracy.
+- 0.82842
+
+Question 6
+A ball with velocity [4, 2] reflects off a vertical wall.  
+What is its new velocity?
+- [-4, 2]
+
+Question 7
+Which of the following illustrate how to properly structure a keydown or keyup event handler? 
+-
+def keydown_handler(key):
+    if "left" == KEY_MAP[key]:
+        …
+        
+Question 8
+Assume you have a program with a keydown handler. You run it, and press a single key and hold it down continuously.  H
+ow many times does the keydown handler get called?
+- 1
+
+Question 9
+Several keys on the keyboard, such as Shift, CapsLock, and Ctrl, typically act to modify what happens when you press other keys, rather than doing anything on their own.  
+When using the SimpleGUI keydown handler, how are such keys treated?
+- Independent key press events — e.g., pressing Shift by itself creates an event
