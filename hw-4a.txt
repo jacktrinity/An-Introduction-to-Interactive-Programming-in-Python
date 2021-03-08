@@ -1,3 +1,5 @@
+Week 4 of "An Introduction to Interactive Programming in Python"
+
 Question 1
 Python has a built-in function that adds up the numbers in a list. For example, given the list [1, 2, 5, 4], this function returns 1 + 2 + 5 + 4 = 12. 
 Use your search skills to find the name of this built-in function. 
