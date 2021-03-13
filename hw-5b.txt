@@ -1,0 +1,104 @@
+Question 1
+Which of the following expressions corresponds to a dictionary with no elements?
+- {}
+- dict()
+
+Question 2
+Given an existing dictionary favorites, what Python statement adds the key "fruit" to this dictionary with the corresponding value "blackberry"?
+- favorites["fruit"] = "blackberry"
+
+Question 3
+Keys in a dictionary can have which of the following types?
+- Booleans
+- Numbers
+- Strings
+- Tuples
+
+Question 4
+Values in a dictionary can have which of the following types?
+- Tuples
+- Lists
+- Dictionaries
+- Numbers
+- Booleans
+- Strings
+
+Question 5
+We often want to loop over all the key/value pairs in a dictionary. Assume the variable my_dict stores a dictionary.
+One way of looping like this is as follows:
+
+for key in my_dict:
+  value = my_dict[key]
+  …
+  
+However, there is a better way. We can instead write the following:
+
+for key, value in ???:
+  …
+  
+What code should replace the question marks so that the two forms are equivalent?
+- my_dict.items()
+
+Question 6
+Conceptually, the purpose of a dictionary is to represent a relationship between two collections of data — each key in the dictionary is related to one value. 
+Which of the following situations are instances of such a relationship?
+- Storing where each person lives
+  map each person (key) to the corresponding address (value)
+  
+- Storing x and y coordinates of 2-dimensional points taken from a function, so that each x coordinate occurs at most once.  
+  map each x (key) to the corresponding y (value)
+  
+Question 7
+In the previous quiz, you were asked to complete the following code:
+
+import random
+
+def random_point():
+    """Returns a random point on a 100x100 grid."""
+    return (random.randrange(100), random.randrange(100))
+
+def starting_points(players):
+    """Returns a list of random points, one for each player."""
+    points = []
+    for player in players:
+        point = random_point()
+        ???
+    return points
+    
+Now, we want to rewrite starting_points using a list comprehension.  Which list comprehensions could replace the following question marks?    
+
+def starting_points(players):
+    """Returns a list of random points, one for each player."""
+    return ???
+    
+- [random_point() for p in players]
+- [random_point() for player in players]
+
+Question 8
+You have the following code. The goal is to display a portion of the image, rescaling it to fill the canvas.
+
+import simplegui
+
+frame_size = [200, 200]
+image_size = [1521, 1818]
+
+def draw(canvas):
+    canvas.draw_image(image, image_size, 
+                     [image_size[0] / 2, image_size[1] / 2], 
+                     [frame_size[0] / 2, frame_size[1] / 2], 
+                     frame_size)
+
+frame = simplegui.create_frame("test", frame_size[0], frame_size[1])
+frame.set_draw_handler(draw)
+image = simplegui.load_image("http://commondatastorage.googleapis.com/codeskulptor-assets/gutenberg.jpg")
+frame.start()
+
+Run it, and observe that nothing is displayed in the frame. What is the problem?
+- The source arguments in draw_image are incorrect. We are trying to load pixels that are not within the image, and thus the draw fails.
+
+Question 9
+Write a CodeSkulptor program that loads and draws the following image:
+http://commondatastorage.googleapis.com/codeskulptor-assets/alphatest.png
+
+With a source center of [220, 100] and a source size of [100, 100]. What one word appears in the canvas? If a letter is capitalized in the image, enter it as a capital.
+- tin
