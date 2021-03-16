@@ -1,1 +1,234 @@
 Week 6 of "An Introduction to Interactive Programming in Python"
+
+Question 1
+Every class definition should include an initializer method. What is the name of the initializer method?
+- __init__ (2 underscores on each side)
+
+Question 2
+In Python, what is the main difference between a function and a method?
+- Functions are defined outside of classes, while methods are defined inside of and part of classes.
+
+Question 3
+class Character:
+    def __init__(self, name, initial_health):
+        self.name = name
+        self.health = initial_health
+        self.inventory = []
+        
+    def __str__(self):
+        s  = "Name: " + self.name
+        s += " Health: " + str(self.health)
+        s += " Inventory: " + str(self.inventory)
+        return s
+    
+    def grab(self, item):
+        self.inventory.append(item)
+        
+    def get_health(self):
+        return self.health
+        
+What does the self parameter represent?
+- An object (instance) of the Character class.
+
+Question 4
+class My_Class:
+    …
+
+    def my_method(self, value1, value2):
+        """Assumes its inputs are two values and does something."""
+        …
+
+my_object = My_Class()
+
+The last line defines the variable my_object as an object of My_Class class. Which of the following is proper syntax for using the method on this object?
+- my_object.my_method(1, 2)
+
+Question 5
+We want to have balls that move around.  Which of the following designs represents encapsulation best?
+
+-
+class Ball:
+    def __init__(self, c, r):
+        self.center = c
+        self.radius = r
+
+    def move(self, move_vector):
+        """
+        Changes the position of the ball by the given vector.
+        """
+        self.center[0] += move_vector[0]
+        self.center[1] += move_vector[1]
+
+# balls : A list of Ball objects
+balls = …
+
+Question 6
+1. Start a class definition. We'll call the class Overload.
+2. Define an init method. Along with the standard self it has one parameter. The method does nothing useful for this example 
+   — use the Python do-nothing statement pass for the body.
+3. Define a second init method. Along with self it has two parameters. This method also does nothing useful.
+    
+Outside of the class, we want to create two Overload objects.  If Python supports overloading, you will be able to create an Overload object with one argument, and create another Overload object with two arguments.  
+
+Does Python support overloading?
+- No
+
+Question 7
+First, complete the following class definition:
+class BankAccount:
+    def __init__(self, initial_balance):
+        """Creates an account with the given balance."""
+        …
+
+    def deposit(self, amount):
+        """Deposits the amount into the account."""
+        … 
+
+   def withdraw(self, amount):
+        """
+        Withdraws the amount from the account. Each withdrawal 
+        resulting in a negative balance also deducts a penalty 
+        fee of 5 dollars from the balance.
+        """
+        …
+
+    def get_balance(self):
+        """Returns the current balance in the account."""
+        …
+
+    def get_fees(self):
+        """Returns the total fees ever deducted from the account."""
+        …
+        
+my_account = BankAccount(10)
+my_account.withdraw(5)
+my_account.deposit(10)
+my_account.withdraw(5)
+my_account.withdraw(15)
+my_account.deposit(20)
+my_account.withdraw(5)
+my_account.deposit(10)
+my_account.deposit(20)
+my_account.withdraw(15)
+my_account.deposit(30)
+my_account.withdraw(10)
+my_account.withdraw(15)
+my_account.deposit(10)
+my_account.withdraw(50)
+my_account.deposit(30)
+my_account.withdraw(15)
+my_account.deposit(10)
+my_account.withdraw(5)
+my_account.deposit(20)
+my_account.withdraw(15)
+my_account.deposit(10)
+my_account.deposit(30)
+my_account.withdraw(25)
+my_account.withdraw(5)
+my_account.deposit(10)
+my_account.withdraw(15)
+my_account.deposit(10)
+my_account.withdraw(10)
+my_account.withdraw(15)
+my_account.deposit(10)
+my_account.deposit(30)
+my_account.withdraw(25)
+my_account.withdraw(10)
+my_account.deposit(20)
+my_account.deposit(10)
+my_account.withdraw(5)
+my_account.withdraw(15)
+my_account.deposit(10)
+my_account.withdraw(5)
+my_account.withdraw(15)
+my_account.deposit(10)
+my_account.withdraw(5)
+print my_account.get_balance(), my_account.get_fees()
+
+- -60, 75
+
+Question 8
+A bank with only one account will go out of business, so we want our BankAccount class to work correctly with many accounts. Naturally, each bank account should have its own balance, with deposits and withdrawals going to the appropriate account. Similarly, the penalty fees for each account should be kept separate.
+
+class BankAccount:
+    def __init__(self, initial_balance):
+        """Creates an account with the given balance."""
+        …
+
+    def deposit(self, amount):
+        """Deposits the amount into the account."""
+        …
+
+    def withdraw(self, amount):
+        """
+        Withdraws the amount from the account.  Each withdrawal
+        resulting in a negative balance also deducts a penalty 
+        fee of 5 dollars from the balance.
+        """
+        …
+
+    def get_balance(self):
+        """Returns the current balance in the account."""
+        …
+
+    def get_fees(self):
+        """Returns the total fees ever deducted from the account."""
+        …
+        
+account1 = BankAccount(20)
+account1.deposit(10)
+account2 = BankAccount(10)
+account2.deposit(10)
+account2.withdraw(50)
+account1.withdraw(15)
+account1.withdraw(10)
+account2.deposit(30)
+account2.withdraw(15)
+account1.deposit(5)
+account1.withdraw(10)
+account2.withdraw(10)
+account2.deposit(25)
+account2.withdraw(15)
+account1.deposit(10)
+account1.withdraw(50)
+account2.deposit(25)
+account2.deposit(25)
+account1.deposit(30)
+account2.deposit(10)
+account1.withdraw(15)
+account2.withdraw(10)
+account1.withdraw(10)
+account2.deposit(15)
+account2.deposit(10)
+account2.withdraw(15)
+account1.deposit(15)
+account1.withdraw(20)
+account2.withdraw(10)
+account2.deposit(5)
+account2.withdraw(10)
+account1.deposit(10)
+account1.deposit(20)
+account2.withdraw(10)
+account2.deposit(5)
+account1.withdraw(15)
+account1.withdraw(20)
+account1.deposit(5)
+account2.deposit(10)
+account2.deposit(15)
+account2.deposit(20)
+account1.withdraw(15)
+account2.deposit(10)
+account1.deposit(25)
+account1.deposit(15)
+account1.deposit(10)
+account1.withdraw(10)
+account1.deposit(10)
+account2.deposit(20)
+account2.withdraw(15)
+account1.withdraw(20)
+account1.deposit(5)
+account1.deposit(10)
+account2.withdraw(20)
+print account1.get_balance(), account1.get_fees(), account2.get_balance(), account2.get_fees()
+
+- -55 45 45 20
