@@ -1,7 +1,7 @@
 """
 Week 6 Mini-Project of An Introduction to Interactive Programming
-CodeSkulptor: http://www.codeskulptor.org/#user48_zh7mHUaQXM8ltu4.py
 
+CodeSkulptor: http://www.codeskulptor.org/#user48_zh7mHUaQXM8ltu4.py
 Written in Python 2
 """
 
