@@ -1,0 +1,51 @@
+Question 1
+Which of the following is valid notation for a set?
+- set([])
+- set([1, 2, 3])
+
+Question 2
+Which of the following operations can mutate set s?
+- s.update(t)
+- s.discard(x)
+
+Question 3
+Which operation corresponds to the following description?
+
+Given two sets, s and t we want a new set containing all the elements that are in one of the sets, but not both of the sets. 
+For example, if s has the elements 1, 2, 3, 4, and t has the elements 3, 4, 5, 6, then the result should have the elements 1, 2, 5, 6.
+- t.symmetric_difference(s)
+
+Question 4
+A set is an unordered collection of distinct elements. Which of the following problem contexts represent instances of this idea?
+- Rooms in a buliding
+
+Question 5
+How many frames per second are typically projected in modern movies? How many times per second is the draw handler typically called in CodeSkulptor?
+- 24 60
+
+Question 6
+For this week, the mini-project defines and uses a Sprite class to support animations. 
+What attribute (also known as a field) can be used to help index the sub-images forming an animated sprite?
+- age
+
+Question 7
+Consider a horizontally-tiled image where each sub-image has the same size. 
+If each sub-image is of size 60×90 (in pixels), what is the horizontal distance (in pixels) between the centers of adjacent sub-images?
+- 60
+
+Question 8
+How many distinct numbers are printed by the following code?
+
+def next(x):
+    return (x ** 2 + 79) % 997
+
+x = 1
+for i in range(1000):
+    print x
+    x = next(x)
+    
+- 46
+
+Question 9
+Which instructor exhibits the best coding style?
+- Scott
