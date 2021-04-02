@@ -1,3 +1,10 @@
+"""
+Week 8 Mini-Project of An Introduction to Interactive Programming
+CodeSkulptor: http://www.codeskulptor.org/#user48_42Ofq7kk4lL7CXC.py
+
+Written in Python 2
+"""
+
 # implementation of Spaceship - program template for RiceRocks
 import simplegui
 import math
